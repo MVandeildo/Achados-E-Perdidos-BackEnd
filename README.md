@@ -31,6 +31,7 @@ Alem disso, o aplicativo conta com um mapa interativo do campus, que auxilia na 
 12. O sistema deve manter um historico de itens devolvidos ou recuperados, para controle e estatisticas
 
 # Diagrama de use case
+![Diagrama de Casos de Uso](./imagens/diagrama-use-case.png)
 
 # Modelo Logico (bd)
 ![Modelo Logico](./imagens/modelo-logico.png)
