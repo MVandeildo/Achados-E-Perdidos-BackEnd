@@ -26,7 +26,7 @@ Alem disso, o aplicativo conta com um mapa interativo do campus, que auxilia na 
 
 10. O sitema deve permitir que os usuarios entrem em contato entre si por meio de mensagens internas ou informações de contato(como email ou telefone)
 
-11. O sistema deve permitirque um administrador gerencie usuarios e registros, podendo excluir postagens inapropriadas ou duplicadas
+11. O sistema deve permitir que um administrador gerencie usuarios e registros, podendo excluir postagens inapropriadas ou duplicadas
 
 12. O sistema deve manter um historico de itens devolvidos ou recuperados, para controle e estatisticas
 
