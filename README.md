@@ -5,6 +5,8 @@ O Aplicativo de Achados e Perdidos do Campus tem como objetivo facilitar a comun
 
 Alem disso, o aplicativo conta com um mapa interativo do campus, que auxilia na visualização dos locais onde os objetos foram encontrados ou perdidos, tornando o processo de busca mais rapido e eficiente. Dessa forma, o sistema contribui para a otganização, segurança e colaboração entre os membros da comunidade academica, reduzindo o tempo e o esforço necessarios para recuperar pertences extraviados
 
+Link do vídeo de apresentação: https://youtu.be/2UfrLvXkgy4
+
 # Requisitos Funcionais
 1. O sistema deve permitir que o usuario realize o cadastro informando nome, email institucional, telefone e senha
 
