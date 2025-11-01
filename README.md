@@ -1,7 +1,7 @@
 # Achados-E-Perdidos
 
 # Descrição do Projeto
-O Aplicativo de Achados e Perdidos do Campus tem como objetivo facilitar a comunicação entre alunos, professores e funcionarios na localizaçãode objetos perdidos dentro do ambiente academico. A plataforma permite o registro de itens perdidos e encontrados, incluindo fotos, descrições detalhadas, local e informações de contato do responsavel pelo cadastro.
+O Aplicativo de Achados e Perdidos do Campus tem como objetivo facilitar a comunicação entre alunos, professores e funcionarios na localização de objetos perdidos dentro do ambiente academico. A plataforma permite o registro de itens perdidos e encontrados, incluindo fotos, descrições detalhadas, local e informações de contato do responsavel pelo cadastro.
 
 Alem disso, o aplicativo conta com um mapa interativo do campus, que auxilia na visualização dos locais onde os objetos foram encontrados ou perdidos, tornando o processo de busca mais rapido e eficiente. Dessa forma, o sistema contribui para a organização, segurança e colaboração entre os membros da comunidade academica, reduzindo o tempo e o esforço necessarios para recuperar pertences extraviados
 
