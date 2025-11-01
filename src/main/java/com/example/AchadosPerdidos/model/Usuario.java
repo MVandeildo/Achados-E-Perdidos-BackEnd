@@ -1,15 +1,13 @@
 package com.example.AchadosPerdidos.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
-@Getter
-@Setter
+@Data
 public class Usuario {
 
     @Id

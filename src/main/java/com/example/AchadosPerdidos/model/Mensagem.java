@@ -1,15 +1,13 @@
 package com.example.AchadosPerdidos.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "mensagens")
-@Getter
-@Setter
+@Data
 public class Mensagem {
 
     @Id

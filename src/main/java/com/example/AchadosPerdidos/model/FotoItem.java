@@ -1,13 +1,11 @@
 package com.example.AchadosPerdidos.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Entity
 @Table(name = "fotos_itens")
-@Getter
-@Setter
+@Data
 public class FotoItem {
 
     @Id
