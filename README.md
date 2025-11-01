@@ -1,9 +1,11 @@
 # Achados-E-Perdidos
 
 # Descrição do Projeto
-O Aplicativo de Achados e Perdidos do Campus tem como objetivo facilitar a comunicação entre alunos, professores e funcionarios na localizaçãode objetos perdidos dentro do ambiente academico. A plataforma permiteo registro de itens perdidos e encontrados, incluindo fotos, descrições detalhadas, local e informações de contato do responsavel pelo cadastro.
+O Aplicativo de Achados e Perdidos do Campus tem como objetivo facilitar a comunicação entre alunos, professores e funcionarios na localizaçãode objetos perdidos dentro do ambiente academico. A plataforma permite o registro de itens perdidos e encontrados, incluindo fotos, descrições detalhadas, local e informações de contato do responsavel pelo cadastro.
 
-Alem disso, o aplicativo conta com um mapa interativo do campus, que auxilia na visualização dos locais onde os objetos foram encontrados ou perdidos, tornando o processo de busca mais rapido e eficiente. Dessa forma, o sistema contribui para a otganização, segurança e colaboração entre os membros da comunidade academica, reduzindo o tempo e o esforço necessarios para recuperar pertences extraviados
+Alem disso, o aplicativo conta com um mapa interativo do campus, que auxilia na visualização dos locais onde os objetos foram encontrados ou perdidos, tornando o processo de busca mais rapido e eficiente. Dessa forma, o sistema contribui para a organização, segurança e colaboração entre os membros da comunidade academica, reduzindo o tempo e o esforço necessarios para recuperar pertences extraviados
+
+Link do vídeo de apresentação: https://youtu.be/2UfrLvXkgy4
 
 # Requisitos Funcionais
 1. O sistema deve permitir que o usuario realize o cadastro informando nome, email institucional, telefone e senha
@@ -16,7 +18,7 @@ Alem disso, o aplicativo conta com um mapa interativo do campus, que auxilia na 
 
 5. O sistema deve permitir que qualquer usuario consulte a lista de itens perdidos e encontrados, com opção de filtro por categoria, data ou local
 
-6. O sistema deve exibir as informações completa de um item selecionado, incluindofoto, descrição, data e contato do usuario que registrou o item
+6. O sistema deve exibir as informações completa de um item selecionado, incluindo foto, descrição, data e contato do usuario que registrou o item
 
 7. O sistema deve disponibilizar um mapa interativo do campus para que os usuarios possam marcar o local onde o item foi perdido ou encontrado
 
