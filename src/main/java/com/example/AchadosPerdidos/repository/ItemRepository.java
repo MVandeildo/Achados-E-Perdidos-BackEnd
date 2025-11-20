@@ -8,6 +8,11 @@ import java.util.List;
 public interface ItemRepository extends JpaRepository<Item,Long> {
 
     List<Item> findByStatus(String status);
+    
     List<Item> findByLocalizacaoContainingIgnoreCase(String localizacao);
+
+    List<Item> findByUsuarioId(Long usuarioId);
+
+    List<Item> findByTituloContainingIgnoreCase(String titulo);
     
 }
