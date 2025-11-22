@@ -11,7 +11,7 @@ public interface ItemRepository extends JpaRepository<Item,Long> {
     
     List<Item> findByLocalizacaoContainingIgnoreCase(String localizacao);
 
-    List<Item> findByUsuarioId(Long usuarioId);
+    List<Item> findByUsuarioId(Long id);
 
     List<Item> findByTituloContainingIgnoreCase(String titulo);
     

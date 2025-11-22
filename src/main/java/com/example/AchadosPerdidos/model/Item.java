@@ -30,8 +30,9 @@ public class Item {
     private LocalDateTime dataRegistro = LocalDateTime.now();
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
+    @JoinColumn(name = "id_usuario")
     private Usuario usuario;
+
 
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
     private List<FotoItem> fotos;

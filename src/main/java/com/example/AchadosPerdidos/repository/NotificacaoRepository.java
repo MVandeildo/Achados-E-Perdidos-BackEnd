@@ -10,7 +10,7 @@ public interface NotificacaoRepository extends JpaRepository<Notificacao, Long> 
 
      List<Notificacao> findByUsuarioId(Long usuarioId);
 
-    List<Notificacao> findByItemId(Long itemId);
+    List<Notificacao> findByItemIdItem(Long idItem);
 
     List<Notificacao> findByMensagemContainingIgnoreCase(String texto);
     
