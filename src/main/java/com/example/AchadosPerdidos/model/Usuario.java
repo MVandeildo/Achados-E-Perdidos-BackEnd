@@ -3,7 +3,9 @@ package com.example.AchadosPerdidos.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "usuarios")
@@ -26,9 +28,6 @@ public class Usuario {
     @Column(length = 20)
     private String telefone;
 
-    @Column(nullable = false,length = 20)
-    private String tipoUsuario;
-
     private LocalDateTime dataCadastro = LocalDateTime.now();
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -37,4 +36,11 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Notificacao> notificacoes;
     
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        name = "usuario_roles",
+        joinColumns = @JoinColumn(name = "usuario_id"),
+        inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles = new HashSet<>();
 }

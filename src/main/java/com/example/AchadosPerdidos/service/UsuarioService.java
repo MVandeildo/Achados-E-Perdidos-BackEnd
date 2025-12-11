@@ -35,7 +35,6 @@ public class UsuarioService {
             usuarioExistente.setNome(usuarioDetalhes.getNome());
             usuarioExistente.setEmail(usuarioDetalhes.getEmail());
             usuarioExistente.setTelefone(usuarioDetalhes.getTelefone());
-            usuarioExistente.setTipoUsuario(usuarioDetalhes.getTipoUsuario());
             return usuarioRepository.save(usuarioExistente);
         }).orElseThrow(() -> new RuntimeException("Usuário não encontrado com ID: " + id));
     }
@@ -49,9 +48,5 @@ public class UsuarioService {
 
     public Optional<Usuario> buscarPorEmail(String email) {
         return usuarioRepository.findByEmail(email);
-    }
-
-    public List<Usuario> buscarPorTipo(String tipoUsuario) {
-        return usuarioRepository.findByTipoUsuario(tipoUsuario);
     }
 }
