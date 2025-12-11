@@ -11,9 +11,10 @@ import java.util.Optional;
 @Service
 public class FotoItemService {
 
+    @Autowired
     private final FotoItemRepository fotoItemRepository;
 
-    @Autowired
+    
     public FotoItemService(FotoItemRepository fotoItemRepository) {
         this.fotoItemRepository = fotoItemRepository;
     }

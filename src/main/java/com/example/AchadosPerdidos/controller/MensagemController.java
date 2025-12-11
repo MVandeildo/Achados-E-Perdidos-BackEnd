@@ -13,9 +13,9 @@ import java.util.List;
 @RequestMapping("/api/mensagens")
 public class MensagemController {
 
+    @Autowired
     private final MensagemService mensagemService;
 
-    @Autowired
     public MensagemController(MensagemService mensagemService) {
         this.mensagemService = mensagemService;
     }

@@ -13,9 +13,9 @@ import java.util.List;
 @RequestMapping("/api/itens")
 public class ItemController {
 
+    @Autowired
     private final ItemService itemService;
 
-    @Autowired
     public ItemController(ItemService itemService) {
         this.itemService = itemService;
     }

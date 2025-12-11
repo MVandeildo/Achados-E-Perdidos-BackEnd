@@ -13,9 +13,9 @@ import java.util.List;
 @RequestMapping("/api/notificacoes")
 public class NotificacaoController {
 
+    @Autowired
     private final NotificacaoService notificacaoService;
 
-    @Autowired
     public NotificacaoController(NotificacaoService notificacaoService) {
         this.notificacaoService = notificacaoService;
     }

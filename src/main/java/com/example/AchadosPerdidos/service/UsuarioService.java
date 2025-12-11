@@ -11,9 +11,9 @@ import java.util.Optional;
 @Service
 public class UsuarioService {
 
+    @Autowired
     private final UsuarioRepository usuarioRepository;
 
-    @Autowired
     public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }

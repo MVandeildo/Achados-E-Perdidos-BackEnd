@@ -12,9 +12,9 @@ import java.util.List;
 @RequestMapping("/api/historico")
 public class HistoricoController {
 
+    @Autowired
     private final HistoricoItemService historicoItemService;
 
-    @Autowired
     public HistoricoController(HistoricoItemService historicoItemService) {
         this.historicoItemService = historicoItemService;
     }

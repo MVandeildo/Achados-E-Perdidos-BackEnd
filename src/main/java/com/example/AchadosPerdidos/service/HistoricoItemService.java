@@ -11,9 +11,9 @@ import java.util.Optional;
 @Service
 public class HistoricoItemService {
 
+    @Autowired
     private final HistoricoItemRepository historicoItemRepository;
 
-    @Autowired
     public HistoricoItemService(HistoricoItemRepository historicoItemRepository) {
         this.historicoItemRepository = historicoItemRepository;
     }

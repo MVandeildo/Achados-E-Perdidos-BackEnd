@@ -11,9 +11,9 @@ import java.util.Optional;
 @Service
 public class NotificacaoService {
 
+    @Autowired
     private final NotificacaoRepository notificacaoRepository;
 
-    @Autowired
     public NotificacaoService(NotificacaoRepository notificacaoRepository) {
         this.notificacaoRepository = notificacaoRepository;
     }
