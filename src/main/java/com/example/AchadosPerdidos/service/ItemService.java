@@ -2,7 +2,6 @@ package com.example.AchadosPerdidos.service;
 
 import com.example.AchadosPerdidos.model.Item;
 import com.example.AchadosPerdidos.repository.ItemRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +10,6 @@ import java.util.Optional;
 @Service
 public class ItemService {
 
-    @Autowired
     private final ItemRepository itemRepository;
 
     public ItemService(ItemRepository itemRepository) {
