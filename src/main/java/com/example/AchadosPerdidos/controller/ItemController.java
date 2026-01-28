@@ -5,6 +5,7 @@ import com.example.AchadosPerdidos.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class ItemController {
     }
 
     // POST: /api/itens
+    @PreAuthorize("hasAnyRole('ALUNO','PROFESSOR','FUNCIONARIO')")
     @PostMapping
     public ResponseEntity<Item> criarItem(@RequestBody Item item) {
         Item novoItem = itemService.salvar(item);
@@ -43,6 +45,7 @@ public class ItemController {
     }
 
     // PUT: /api/itens/{id}
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<Item> atualizarItem(@PathVariable Long id, @RequestBody Item itemDetalhes) {
         try {
@@ -54,6 +57,7 @@ public class ItemController {
     }
 
     // DELETE: /api/itens/{id}
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarItem(@PathVariable Long id) {
         try {

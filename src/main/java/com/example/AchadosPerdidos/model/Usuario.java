@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 @Table(name = "usuarios")
 @Data
-public class Usuario implements UserDetails {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,23 +43,4 @@ public class Usuario implements UserDetails {
         inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles = new HashSet<>();
-
-    public Collection<? extends GrantedAuthority> getAuthorities(){
-        return this.roles.stream().map(role -> new SimpleGrantedAuthority(role.getNome())).collect(Collectors.toList());
-    }
-
-    @Override
-    public boolean isAccountNonExpired(){
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired(){
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled(){
-        return true;
-    }
 }
