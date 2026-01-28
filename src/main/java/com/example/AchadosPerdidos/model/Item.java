@@ -1,0 +1,52 @@
+package com.example.AchadosPerdidos.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Entity
+@Table(name = "itens")
+@Data
+public class Item {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 100)
+    private String titulo;
+
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String descricao;
+
+    @Column(length = 20)
+    private String status = "Perdido"; // Perdido, Encontrado, Devolvido
+
+    @Column(length = 100)
+    private String localizacao;
+
+    @Column(columnDefinition = "TEXT")
+    private String imagem; // Base64 da imagem
+
+    @Column(length = 100)
+    private String userName; // Nome do usuário que criou
+
+    @Column(name = "latitude")
+    private Double latitude;
+
+    @Column(name = "longitude")
+    private Double longitude;
+
+    private LocalDateTime dataRegistro = LocalDateTime.now();
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
+    private List<FotoItem> fotos;
+
+}
+
