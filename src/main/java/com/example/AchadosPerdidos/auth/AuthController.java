@@ -7,11 +7,12 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 import com.example.AchadosPerdidos.model.Role;
 import com.example.AchadosPerdidos.model.Usuario;
@@ -29,7 +30,7 @@ public class AuthController {
     public record LoginResponse(String token) {
     }
 
-    public record RegisterRequest(String nome, String email, String senha, String telefone) {
+    public record RegisterRequest(String nome, String email, String senha, String telefone, List<String> roles) {
     }
 
     public record RegisterResponse(String mensagem, String email) {
@@ -46,6 +47,9 @@ public class AuthController {
 
     @Autowired
     private RoleRepository roleRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
@@ -75,19 +79,23 @@ public class AuthController {
             Usuario usuario = new Usuario();
             usuario.setNome(request.nome());
             usuario.setEmail(request.email());
-            usuario.setSenha(new BCryptPasswordEncoder().encode(request.senha()));
+            usuario.setSenha(passwordEncoder.encode(request.senha()));
             usuario.setTelefone(request.telefone());
 
-            // Obter ou criar role ALUNO
-            Role roleAluno = roleRepository.findByNome("ROLE_ALUNO")
-                    .orElseGet(() -> {
-                        Role novaRole = new Role();
-                        novaRole.setNome("ROLE_ALUNO");
-                        return roleRepository.save(novaRole);
-                    });
+            // Adicionar roles selecionadas (padrão: ALUNO se nenhuma for selecionada)
+            List<String> rolesNomes = request.roles() != null && !request.roles().isEmpty() 
+                ? request.roles() 
+                : List.of("ROLE_ALUNO");
 
-            // Associar role ao usuário
-            usuario.getRoles().add(roleAluno);
+            for (String roleNome : rolesNomes) {
+                Role role = roleRepository.findByNome(roleNome)
+                        .orElseGet(() -> {
+                            Role novaRole = new Role();
+                            novaRole.setNome(roleNome);
+                            return roleRepository.save(novaRole);
+                        });
+                usuario.getRoles().add(role);
+            }
 
             // Salvar usuário
             usuarioRepository.save(usuario);

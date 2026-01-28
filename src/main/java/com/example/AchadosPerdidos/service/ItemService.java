@@ -34,6 +34,8 @@ public class ItemService {
             itemExistente.setDescricao(itemDetalhes.getDescricao());
             itemExistente.setStatus(itemDetalhes.getStatus());
             itemExistente.setLocalizacao(itemDetalhes.getLocalizacao());
+            itemExistente.setLatitude(itemDetalhes.getLatitude());
+            itemExistente.setLongitude(itemDetalhes.getLongitude());
             itemExistente.setUsuario(itemDetalhes.getUsuario());
 
             return itemRepository.save(itemExistente);
